@@ -41,6 +41,13 @@
      </th>
     </tr>
     
+    <tr>
+     <th>
+     <input type="button" value="정보수정" class="input_button"
+     		onclick="location='member_edit.do'" />
+
+     </th>
+    </tr>
    </table>   
    </form>
  </div>
