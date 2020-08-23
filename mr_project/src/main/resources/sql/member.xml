@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberns">
+    
+        
+    <!-- 비번 검색 -->
+	<select id="pwd_find" resultType="member" parameterType="member">
+     select *  from joindb where join_id=#{join_id} and join_name=#{join_name}
+    </select>
+    
+<!--     회원저장 -->
+    <insert id="member_join" parameterType="member">
+     insert into joindb (code,
+     join_id,passwd1,passwd2,
+     join_name,join_date,join_num,
+     addr_num,addr1,addr2,
+     tel,phone,email,join_joindate,join_deldate,join_delcont) 
+     values(join_code_seq.nextval,
+     #{join_id},#{passwd1},#{passwd2},
+     #{join_name},#{join_date},#{join_num},
+     #{addr_num},#{addr1},#{addr2},
+     #{tel},#{phone},#{email},sysdate,sysdate,1)
+    </insert>
+    
+<!--  로그인 인증 -->
+    <select id="login_check" parameterType="String" resultType="member">
+     select * from joindb where join_id=#{id} and join_delcont=1
+    </select>
+    
+<!--  회원수정 -->
+    <update id="member_edit" parameterType="member">
+     update joindb set 
+     passwd1=#{passwd1},passwd2=#{passwd2},
+     join_name=#{join_name},
+     join_date=#{join_date},join_num=#{join_num},
+     addr_num=#{addr_num},addr1=#{addr1},addr2=#{addr2},
+     tel=#{tel},phone=#{phone},email=#{email} 
+     where join_id=#{join_id}
+    </update>    
+    
+<!--     회원삭제 -->
+    <update id="member_delete" parameterType="member">
+      update joindb set
+      join_delcont=2,
+      join_deldate=sysdate
+      where join_id=#{join_id}
+    </update>
+
+<!--  임시비밀번호 변경 -->
+    <update id="pwd_edit" parameterType="member">
+      update joindb set
+      passwd1=#{passwd2},
+      passwd2=#{passwd2}
+      where join_id=#{join_id}
+    </update>
+    
+<!--  임시비밀번호 생성 -->
+    <update id="tem_pwd" parameterType="member">
+      update joindb set
+      passwd2=#{passwd2}
+      where join_id=#{join_id}
+    </update>
+    
+</mapper>
+
+
+
+
+
+
+
+
