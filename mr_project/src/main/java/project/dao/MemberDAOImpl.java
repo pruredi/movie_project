@@ -62,6 +62,8 @@ public class MemberDAOImpl {
 		sqlSession.update("tem_pwd", member);
 	}
 	
+	
+	
 }
 
 

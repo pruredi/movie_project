@@ -499,7 +499,31 @@ public class MemberAction {
         
         return "member/member_logout";
     }
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //리뷰 메인 페이지 뷰
+	@RequestMapping(value = "/review_main.do")
+	public String review_main() {
+		System.out.println("review_main");
+		return "member/review_main";
+	}
+	
+	
+	
+	
 }
 
 

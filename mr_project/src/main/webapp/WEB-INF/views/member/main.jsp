@@ -43,8 +43,8 @@
     
     <tr>
      <th>
-     <input type="button" value="정보수정" class="input_button"
-     		onclick="location='member_edit.do'" />
+     <input type="button" value="영화리뷰" class="input_button"
+     		onclick="location='review_main.do'" />
 
      </th>
     </tr>
