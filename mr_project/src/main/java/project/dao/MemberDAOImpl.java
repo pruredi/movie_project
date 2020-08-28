@@ -34,7 +34,7 @@ public class MemberDAOImpl {
 
 	/* 로그인 인증 체크 */
 	public MemberBean userCheck(String id) throws Exception {
-		System.out.println("dao - userCheck");
+		System.out.println("dao - userCheck");	
 		return (MemberBean) sqlSession.selectOne("login_check", id);
 	}
 

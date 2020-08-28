@@ -48,3 +48,6 @@ select * from tab;
 select * from seq;
 select * from joindb;
 select join_code_seq.nextval from dual;
+
+
+select * from joindb where join_id='11111' and join_delcont=1;
