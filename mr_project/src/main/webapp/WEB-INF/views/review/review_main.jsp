@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 리뷰 메인페이 생성 중
 영화 목록 / 
 현재 있는 영화 리뷰 목록

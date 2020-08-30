@@ -518,7 +518,7 @@ public class MemberAction {
 	@RequestMapping(value = "/review_main.do")
 	public String review_main() {
 		System.out.println("review_main");
-		return "member/review_main";
+		return "review/review_main";
 	}
 	
 	
