@@ -108,7 +108,7 @@ def get_review(m_num):
     review_allnum = get_review_allnum(m_num)
     title = get_review_title(m_num)
     # 리뷰 저장용 csv 타이틀 만들기
-    csvname = 'review_csv' + str(m_num) + '_review.csv'
+    csvname = 'review_csv_' + str(m_num) + '_review.csv'
 
     try:
         if(title != '오류'): # 영화없는 번호인지 판별
