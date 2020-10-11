@@ -175,7 +175,7 @@ def get_review(m_num):
 # 리뷰파일이 최신 파일인지 확인
 def review_datecheck(m_num, check):
     # 읽어올 파일 지정
-    title = 'review_csv/' + str(m_num) + '_review.csv'
+    title = 'review_csv_' + str(m_num) + '_review.csv'
 
     if os.path.isfile(title) == True:
         # 파일 읽어오기
@@ -207,7 +207,7 @@ def review_datecheck(m_num, check):
 # 리뷰파일에서 문자 추출
 def review_word_extra(m_num):
     # 읽어올 파일 지정
-    title = 'review_csv/' + str(m_num) + '_review.csv'
+    title = 'review_csv_'+ str(m_num) + '_review.csv'
 
     review_datecheck(m_num, 0)
     csv_text = pd.read_csv(title, encoding='utf-8')
@@ -238,7 +238,7 @@ def review_word_extra(m_num):
 # 리뷰 내용 점수별로 나누기 (1~10)
 def review_word_extra(m_num , score):
     # 읽어올 파일 지정
-    title = 'review_csv/' + str(m_num) + '_review.csv'
+    title = 'review_csv_' + str(m_num) + '_review.csv'
 
     review_datecheck(m_num, 0)
     csv_text = pd.read_csv(title, encoding='utf-8')
